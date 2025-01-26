@@ -30,6 +30,7 @@ const nextConfig = {
     missingSuspenseWithCSRBailout: false,
   },
   transpilePackages: ['three'],
+  output: 'standalone',
 };
 
 export default nextConfig;

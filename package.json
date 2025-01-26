@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "npm run build --prefix ui && npm run build --prefix api"
+    "build": "pnpm run build --prefix ui && pnpm run build --prefix api"
   }
 }

@@ -1,22 +1,23 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "ui/package.json",
+      "src": "ui/next.config.js",
       "use": "@vercel/next"
     },
     {
-      "src": "api/package.json",
+      "src": "api/main.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api"
+      "dest": "api/main.ts"
     },
     {
       "src": "/(.*)",
-      "dest": "ui"
+      "dest": "ui/$1"
     }
   ]
 }

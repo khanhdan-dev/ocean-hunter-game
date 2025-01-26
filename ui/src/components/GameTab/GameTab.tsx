@@ -212,8 +212,8 @@ function GameTab({
                   </div>
                 </div>
               </div>
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="flex w-full items-end justify-between gap-3">
+              <div className="absolute inset-x-3 top-5">
+                <div className="flex w-full items-start justify-between gap-3">
                   <div className="flex flex-col gap-2 rounded-xl border border-white/20 bg-ocean-turquoise/20 p-1 px-2 text-white backdrop-blur-sm hover:opacity-80">
                     <div className="flex items-center justify-center gap-1 text-3xl text-white">
                       <GiFishingNet
@@ -259,7 +259,7 @@ function GameTab({
             </>
           ) : (
             <div className="z-20">
-              <div className="flex -translate-y-10 flex-col items-center justify-start">
+              <div className="flex flex-col items-center justify-start">
                 <div onClick={() => setIsPlayingGame(!isPlayingGame)}>
                   <Image
                     className="h-20 w-auto animate-shake-infinite"
@@ -270,7 +270,7 @@ function GameTab({
                   />
                 </div>
               </div>
-              <div className="absolute bottom-20 left-3 right-3 z-20 flex items-end justify-between">
+              <div className="absolute inset-x-3 top-5 z-20 flex items-start justify-between">
                 <div
                   className="flex w-fit cursor-pointer items-center gap-2 rounded-full border border-white/20 bg-ocean-turquoise/50 p-1 px-2 text-white backdrop-blur-sm hover:opacity-80"
                   onClick={() => setSelectedIndex(4)}

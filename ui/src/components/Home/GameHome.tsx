@@ -21,6 +21,7 @@ import QuestTab from '../QuestTab/QuestTab';
 import ShopTab from '../ShopTab/ShopTab';
 import GameProgressBar from '../GameProgressBar';
 import { habitatData } from '../Swipers/habitatData';
+import { Tooltip } from '../Tooltip';
 
 interface Props {
   telegramUser: ITelegramUserInfo;
@@ -50,9 +51,9 @@ function GameHome({ telegramUser }: Props) {
   const getTabClasses = (selected: boolean) =>
     `${
       selected
-        ? 'bg-ocean-darkblue text-ocean-flashturq text-base focus:outline-none'
-        : 'bg-ocean-darkblue text-white hover:bg-gray-200 text-sm focus:outline-none'
-    } px-4 py-2 w-full`;
+        ? 'text-ocean-flashturq text-base focus:outline-none'
+        : 'text-white hover:bg-ocean-flashturq/80 text-sm focus:outline-none'
+    }`;
 
   const onRenderTabs = () => {
     const tabList = [
@@ -79,17 +80,17 @@ function GameHome({ telegramUser }: Props) {
     ];
 
     return tabList.map((tab) => (
-      <Tab
-        key={tab.name}
-        className={({ selected }) =>
-          `${getTabClasses(selected)} ${
-            isPlayingGame ? 'hidden' : 'flex'
-          } flex-col items-center justify-end gap-1 py-3 hover:bg-ocean-darkblue`
-        }
-      >
-        {tab.icon}
-        <p>{tab.name}</p>
-      </Tab>
+      <Tooltip key={tab.name} text={tab.name}>
+        <Tab
+          className={({ selected }) =>
+            `${getTabClasses(selected)} ${
+              isPlayingGame ? 'hidden' : 'flex'
+            } aspect-square w-14 flex-col items-center justify-center gap-1 rounded-full bg-ocean-darkblue/40 shadow-inner shadow-ocean-white backdrop-blur-lg hover:bg-ocean-darkblue`
+          }
+        >
+          {tab.icon}
+        </Tab>
+      </Tooltip>
     ));
   };
 
@@ -194,7 +195,7 @@ function GameHome({ telegramUser }: Props) {
         </TabPanels>
 
         {/* Tabs List at the bottom */}
-        <TabList className="fixed bottom-0 left-0 right-0 z-20 flex w-full bg-white/50 shadow-lg backdrop-blur-lg">
+        <TabList className="fixed inset-y-0 left-4 z-20 my-auto flex h-fit w-fit flex-col gap-3 shadow-lg">
           {onRenderTabs()}
         </TabList>
       </TabGroup>

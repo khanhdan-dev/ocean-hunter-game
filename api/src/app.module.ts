@@ -13,7 +13,7 @@ dotenv.config();
   imports: [
     UserModule,
     MongooseModule.forRoot(
-      `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ocean-miniapp.lspnu.mongodb.net/?retryWrites=true&w=majority&appName=Ocean-MiniApp`,
+      `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ocean-hunter.fysay.mongodb.net/?retryWrites=true&w=majority&appName=Ocean-Hunter`,
     ),
     ScheduleModule.forRoot(),
   ],

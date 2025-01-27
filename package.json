@@ -1,9 +1,14 @@
 {
+  "name": "my-project",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "ui"
+  ],
   "scripts": {
-    "build": "pnpm run build --prefix ui && pnpm run build --prefix api",
-    "start": "pnpm start:prod --prefix api & pnpm run start --prefix ui",
-    "dev": "pnpm start:dev --prefix api & pnpm dev --prefix ui",
-    "lint": "pnpm lint --prefix api && pnpm lint --prefix ui",
-    "test": "pnpm test --prefix api && pnpm test --prefix ui"
+    "dev": "pnpm run --parallel dev",
+    "build": "pnpm run --parallel build",
+    "start": "pnpm run --parallel start"
   }
 }

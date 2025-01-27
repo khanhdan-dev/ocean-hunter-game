@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install",
   "builds": [
     { "src": "ui/package.json", "use": "@vercel/next" },
     { "src": "api/src/main.ts", "use": "@vercel/node" }

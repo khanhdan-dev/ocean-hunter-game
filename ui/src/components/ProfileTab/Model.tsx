@@ -86,4 +86,4 @@ export function Model(
   );
 }
 
-useGLTF.preload('/skin-2.glb');
+useGLTF.preload('/models/skin-4.glb');

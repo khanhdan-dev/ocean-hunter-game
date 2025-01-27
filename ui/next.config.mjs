@@ -31,6 +31,7 @@ const nextConfig = {
   },
   transpilePackages: ['three'],
   reactStrictMode: true,
+  output: 'standalone',
 };
 
 export default nextConfig;

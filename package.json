@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "pnpm run --parallel dev",
     "build": "pnpm run --parallel build",
-    "start": "pnpm run --parallel start"
+    "start": "pnpm run --parallel start",
+    "vercel-build": "cd ui && pnpm run build && cd ../api && pnpm run build"
   }
 }

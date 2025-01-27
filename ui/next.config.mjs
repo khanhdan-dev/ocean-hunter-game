@@ -30,7 +30,7 @@ const nextConfig = {
     missingSuspenseWithCSRBailout: false,
   },
   transpilePackages: ['three'],
-  output: 'standalone',
+  reactStrictMode: true,
 };
 
 export default nextConfig;

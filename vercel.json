@@ -2,25 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/src/main.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["api/dist/**"]
-      }
+      "src": "ui/package.json",
+      "use": "@vercel/next"
     },
     {
-      "src": "ui/next.config.js",
-      "use": "@vercel/next"
+      "src": "api/package.json",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/dist/main.js"
+      "dest": "api"
     },
     {
       "src": "/(.*)",
-      "dest": "ui/$1"
+      "dest": "ui"
     }
   ]
 }

@@ -1,15 +1,9 @@
 {
-  "name": "ocean-hunter-game",
-  "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "build": "pnpm -F api build && pnpm -F ui build",
-    "start": "pnpm -F api start:prod & pnpm -F ui start",
-    "dev": "pnpm -F api start:dev & pnpm -F ui dev",
-    "lint": "pnpm -F api lint && pnpm -F ui lint",
-    "test": "pnpm -F api test && pnpm -F ui test"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.0"
+    "build": "pnpm run build --prefix ui && pnpm run build --prefix api",
+    "start": "pnpm start:prod --prefix api & pnpm run start --prefix ui",
+    "dev": "pnpm start:dev --prefix api & pnpm dev --prefix ui",
+    "lint": "pnpm lint --prefix api && pnpm lint --prefix ui",
+    "test": "pnpm test --prefix api && pnpm test --prefix ui"
   }
 }
